@@ -1,0 +1,31 @@
+﻿{
+  "name": "VLC for YouTube™",
+  "version": "1.0",
+  "manifest_version": 2,
+  "description": "Replaces the YouTube video player with VLC.",
+  "page_action": {
+    "default_icon": "icons/16.png",
+    "default_title": "Replace player with VLC"
+  },
+  "permissions": [
+    "tabs"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["*://*.youtube.com/*"],
+      "js": ["play.js"]
+    }
+  ],
+  "icons": {
+    "16": "icons/16.png",
+	"48": "icons/48.png",
+    "128": "icons/128.png"
+  },
+  "background": {
+    "scripts": ["fancy-settings/source/lib/store.js", "background.js"]
+  },
+  "options_page": "fancy-settings/source/index.html",
+  "web_accessible_resources": [
+    "cs.js"
+  ]
+}
